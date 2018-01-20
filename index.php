@@ -29,7 +29,7 @@ if (isset($_GET['url'])) {
         <form style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%)" method="GET" action="/">
             <label for="url" class="label">Enter YouTube URL</label>
             <input type="url" name="url" class="form-control" placeholder="https://www.youtube.com/watch?v=n7PWpQ-rISk">
-            <
+            
             <input type="radio" name="format" value="modern">Modern format<br>
             <input type="radio" name="format" value="oldschool">Old school format (Better for old videos ripped from television)
             
