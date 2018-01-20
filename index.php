@@ -22,13 +22,17 @@ if (isset($_GET['url'])) {
         <?php if (isset($_GET['url'])): ?>
         <div style="position: relative">
             <img src="/images/tv.jpg" style="position: absolute; left: 0pt; top: 0pt">
-            <iframe <?php if ($_GET['format'] == 'oldschool'):?> width="1300" height="1215" style="position: absolute; left: 150pt; top: 28pt; opacity: 0.8" <?php else: ?> width="1000" height="715" style="position: absolute; left: 250pt; top: 200pt;" <?php endif; ?> src="<?php echo $url ?>" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+            <iframe <?php if ($_GET['format'] == 'oldschool'):?> width="1300" height="1215" style="position: absolute; left: 150pt; top: 28pt; opacity: 0.9" <?php else: ?> width="1000" height="715" style="position: absolute; left: 250pt; top: 200pt;" <?php endif; ?> src="<?php echo $url ?>" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
             <img src="/images/tv_overlay.png" style="pointer-events: none; position: absolute; left: 0pt; top: 0pt; z-index: 9000">
         </div>
         <?php else: ?>
         <form style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%)" method="GET" action="/">
             <label for="url" class="label">Enter YouTube URL</label>
             <input type="url" name="url" class="form-control" placeholder="https://www.youtube.com/watch?v=n7PWpQ-rISk">
+            <
+            <input type="radio" name="format" value="modern">Modern format<br>
+            <input type="radio" name="format" value="oldschool">Old school format (Better for old videos ripped from television)
+            
             <button class="btn btn-primary" type="submit">View!</button>
         </form>
         <?php endif; ?>
