@@ -16,3 +16,7 @@ footer a {
     color: white;
     text-decoration: none;
 }
+iframe {
+    
+display: block !important;
+}
