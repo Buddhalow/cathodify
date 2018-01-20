@@ -22,7 +22,7 @@ if (isset($_GET['url'])) {
         <div style="position: relative">
             <img src="/images/tv.jpg" style="position: absolute; left: 0pt; top: 0pt">
             <iframe width="1000" height="715" style="position: absolute; left: 250pt; top: 200pt;" src="<?php echo $url ?>" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
-            <img src="/images/tv_overlay.png" style="position: absolute; left: 0pt; top: 0pt; z-index: 10000">
+            <img src="/images/tv_overlay.png" style="pointer-events: none; position: absolute; left: 0pt; top: 0pt; z-index: 9000">
         </div>
         <?php else: ?>
         <form style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%)" method="GET" action="/">
@@ -31,6 +31,6 @@ if (isset($_GET['url'])) {
             <button class="btn btn-primary" type="submit">View!</button>
         </form>
         <?php endif; ?>
-        <footer>&copy; 2018 <a href="https://buddhalow.se">Buddhalow Music</a></footer>
+        <footer style="position: fixed; z-index: 10000; color: white ">&copy; 2018 <a href="https://buddhalow.se" target="_blank"><img style="display: inline-block; filter: invert(1); width: 10pt" src="/images/logo.svg">Buddhalow Music</a></footer>
     </body>
 </html>
