@@ -1,0 +1,36 @@
+<?php
+
+$embed_yt_template = "https://www.youtube.com/embed/";
+
+$url = "https://www.youtube.com/embed/inHawE1JnM4";
+if (isset($_GET['url'])) {
+    $url = $_GET['url'];
+    if (strrpos($url, 'https://www.youtube.com/watch?v=') == 0) {
+        $id = explode('=', $url)[1];
+        $id = explode('&', $id)[0];
+        $url = $embed_yt_template . $id;
+    }
+}
+?><!DOCTYPE html>
+<html>
+    <head>
+        <?php if(!isset($_GET['url'])):?> <link rel="stylesheet" href="/css/app.css"><?php endif;?>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body style="">
+        <?php if (isset($_GET['url'])): ?>
+        <div style="position: relative">
+            <img src="/images/tv.jpg" style="position: absolute; left: 0pt; top: 0pt">
+            <iframe width="1000" height="715" style="position: absolute; left: 250pt; top: 200pt;" src="<?php echo $url ?>" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+            <img src="/images/tv_overlay.png" style="position: absolute; left: 0pt; top: 0pt; z-index: 10000">
+        </div>
+        <?php else: ?>
+        <form style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%)" method="GET" action="/">
+            <label for="url" class="label">Enter YouTube URL</label>
+            <input type="url" name="url" class="form-control" placeholder="https://www.youtube.com/watch?v=n7PWpQ-rISk">
+            <button class="btn btn-primary" type="submit">View!</button>
+        </form>
+        <?php endif; ?>
+        <footer>&copy; 2018 <a href="https://buddhalow.se">Buddhalow Music</a></footer>
+    </body>
+</html>
