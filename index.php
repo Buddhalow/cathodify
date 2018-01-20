@@ -18,8 +18,9 @@ if (isset($_GET['url'])) {
 <html>
     <head>
         <?php if(!isset($_GET['url'])):?> <link rel="stylesheet" href="/css/app.css"><?php endif;?>
-        <link rel="stylesheet" href="/css/style.css">
-        <link rel="stylesheet" href="/css/crt.css">
+        <link rel="stylesheet" href="/css/style.css">§ur
+        <?php if (isset($_GET['url'])):?>
+        <link rel="stylesheet" href="/css/crt.css"><?php endif;
         <meta property="og:title" content="Cathodify" />
         <meta property="og:type" content="website" />
         <meta property="og:description" content="Watch TV as it was in the past">
