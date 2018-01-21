@@ -1,19 +1,17 @@
 <template>
     <div>
         <television-set v-if="src" :skin_src="skin_src" :flicker="flicker" crt="crt" :format="format" :src="src | formatUrl"></television-set>
-        <channel-chooser v-if="chooseChannel">
-            
-        </channel-chooser>
     </div>
 </template>
 <script>
     export default {
         data() {
             return {
-                skin: 'oldschool',
+                skin: null,
                 format: 'modern',
-                src: null,
-                crt: false,
+                skin_src: '/static/skins/oldschool.json',
+                src: 'start',
+                crt: true,
                 flicker: false,
                 chooseChannel: false
             }
@@ -24,7 +22,7 @@
             }
         },
         mounted() {
-            this.load(this.$route.query.skin_src, this.$route.query.src, this.$route.query.format, this.$route.query.crt == 'true', this.$route.query.flicker == 'true')
+            this.load(this.$route.query.skin, this.$route.query.src, this.$route.query.format, this.$route.query.crt == 'true', this.$route.query.flicker == 'true')
           
       
         },
