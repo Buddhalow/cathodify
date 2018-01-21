@@ -10,6 +10,10 @@ import axios from 'axios'
 Vue.filter('formatUrl', function (input) {
   let embed_yt_template = "https://www.youtube.com/embed/";
   let url = input
+  if (url.indexOf('https://www.tv4play.se/program') == 0) {
+    let id = url.split(/\//)[5];
+    url = 'https://www.tv4play.se/iframe/video/' + id
+  }
   if (url.indexOf('https://youtu.be') == 0) {
       let id = url.split(/\//)[2];
       url = embed_yt_template + id;

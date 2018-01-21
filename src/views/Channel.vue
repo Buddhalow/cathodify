@@ -1,6 +1,9 @@
 <template>
     <div>
         <television-set v-if="src" :skin_src="skin_src" :flicker="flicker" crt=":crt" :format="format" :src="src | formatUrl"></television-set>
+        <channel-chooser v-if="chooseChannel">
+            
+        </channel-chooser>
     </div>
 </template>
 <script>
@@ -11,7 +14,8 @@
                 format: 'modern',
                 src: null,
                 crt: false,
-                flicker: false
+                flicker: false,
+                chooseChannel: false
             }
         },
         watch: {

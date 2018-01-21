@@ -5,7 +5,7 @@
     "front": {
         "image_url": "/static/images/tv_overlay.png"
     },
-    "opacity": 0.5,
+    "opacity": 0.8,
     "formats": {
         "modern": {
             "left": "250pt",
