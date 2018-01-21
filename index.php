@@ -1,5 +1,5 @@
 <?php
-
+ 
 $embed_yt_template = "https://www.youtube.com/embed/";
 $actual_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $url = null;
@@ -18,8 +18,8 @@ if (isset($_GET['url'])) {
 <html>
     <head>
         <?php if(!isset($_GET['url'])):?> <link rel="stylesheet" href="/css/app.css"><?php endif;?>
-        <link rel="stylesheet" href="/css/style.css">
-        <?php if (isset($_GET['url'])):?>
+        <link rel="stylesheet" href="/css/style.css">   
+        <?php if (isset($_GET['url']) && $_GET['crt'] == '1'):?>
         <link rel="stylesheet" href="/css/crt.css"><?php endif;?>
         <meta property="og:title" content="Cathodify" />
         <meta property="og:type" content="website" />
@@ -28,7 +28,7 @@ if (isset($_GET['url'])) {
         <meta property="og:url" content="<?php echo $actual_link?>" />
         <meta property="og:image" content="<?php echo (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]"?>/images/tv.jpg">
     </head>
-    <body class="crt" style="margin: 0pt; padding: 0pt">
+    <body class="crt <?php if ($_GET['flickering'] == '1'):?>crt-flickering<?php endif;?>" style="margin: 0pt; padding: 0pt">
         <?php if (isset($_GET['url'])): ?>
         <div style="position: relative">
             
@@ -37,19 +37,21 @@ if (isset($_GET['url'])) {
                 <iframe  <?php if ($_GET['format'] == 'oldschool'):?> width="1300" height="1215" style="position: absolute; left: 150pt; top: 28pt; opacity: 0.9" <?php else: ?> width="1000" height="755" style="position: absolute; left: 250pt; top: 200pt;" <?php endif; ?> src="<?php echo $url ?>?playsinline=1" frameborder="0" allow="encrypted-media"></iframe>
             </div>
             <img src="/images/tv_overlay.png" style="pointer-events: none; position: absolute; left: 0pt; top: 0pt; z-index: 9000">
-            <a class="btn btn-default" href="/">&lt; Back to start page</a>
+            
         </div>
         <?php else: ?>
         <form style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%)" method="GET" action="/">
             <label for="url" class="label">Enter YouTube URL</label>
-            <input type="url" name="url" class="form-control" placeholder="https://www.youtube.com/watch?v=n7PWpQ-rISk">
-            
+            <input type="url" name="url" class="form-control" placeholder="https://www.youtube.com/watch?v=n7PWpQ-rISk"><br>
+             
             <input type="radio" name="format" value="modern">Modern format<br>
-            <input type="radio" name="format" value="oldschool">Old school format (Better for old videos ripped from television)
-            
+            <input type="radio" name="format" value="oldschool">Old school format (Better for old videos ripped from television)<b></br>
+            <input type="checkbox" name="crt" value="1"> Enable CRT screen effect<br>
+            <input type="checkbox" name="flicker" value="1"> Enable CRT flickering<br>
             <button class="btn btn-primary" type="submit">View!</button>
         </form>
         <?php endif; ?>
-        <footer style="position: fixed; z-index: 10000; color: white ">&copy; 2018 <a href="https://buddhalow.se" target="_blank"><img style="display: inline-block; filter: invert(1); width: 10pt" src="/images/logo.svg">Buddhalow Music</a></footer>
+        <footer style="position: fixed; z-index: 10000; color: white ">&copy; 2018 <a href="https://buddhalow.se" target="_blank"><img style="display: inline-block; filter: invert(1); width: 10pt" src="/images/logo.svg">Buddhalow Music</a> <a class="btn btn-default" href="/">&lt; Back to start page</a></footer>
+       <footer>Service by @<a href="https://buddhalow.se">Buddhalow</a>. CRT effect by <a href="http://aleclownes.com/2017/02/01/crt-display.html">@aleclownes</a> </footer>
     </body>
 </html>

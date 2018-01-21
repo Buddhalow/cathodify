@@ -41,8 +41,9 @@ html {
   opacity: 0;
   z-index: 2;
   pointer-events: none;
-  animation: flicker 0.05s infinite;
   height: 1000pt;
   width: 1300pt;
 }
-
+.crt-flickering::after {
+  animation: flicker 0.05s infinite;
+}
