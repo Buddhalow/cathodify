@@ -1,0 +1,23 @@
+{
+    "back": {
+        "image_url": "/static/images/tv.jpg"
+    },
+    "front": {
+        "image_url": "/static/images/tv_overlay.png"
+    },
+    "opacity": 0.5,
+    "formats": {
+        "modern": {
+            "left": "250pt",
+            "top": "200pt",
+            "width": "1000",
+            "height": "755"
+        },
+        "oldschool": {
+            "left": "150pt",
+            "top": "150pt",
+            "width": "100",
+            "height": "755"
+        }
+    }
+}
