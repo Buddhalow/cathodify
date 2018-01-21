@@ -3,7 +3,7 @@
         <div v-if="skin" :style="{position: 'relative'}">
             <img :src="skin.back.image_url" v-bind:style="{position: 'absolute', left: '0pt', top: '0pt'}">
             <div v-bind:class="[crt ? 'crt' : '', flicker ? 'flicker' : '']" >
-                <iframe :width="skin.formats[format].width" :height="skin.formats[format].height" v-bind:style="{position: 'absolute', left: skin.formats[format].left, top: skin.formats[format].top, 'filter': 'saturate(' + saturate + '%)', opacity: skin.opacity}" :src="src + '?playsinline=1&autoplay=1'" frameborder="0" allow="encrypted-media"></iframe>
+                <iframe :width="skin.formats[format].width" :height="skin.formats[format].height" v-bind:style="{position: 'absolute', left: skin.formats[format].left, top: skin.formats[format].top, 'filter': 'saturate(' + saturate + '%) blur(' + blur + 'px)', opacity: skin.opacity}" :src="src + '?playsinline=1&autoplay=1'" frameborder="0" allow="encrypted-media"></iframe>
             </div>
             <img :src="skin.front.image_url" v-bind:style="{'pointer-events': 'none', 'position': 'absolute', 'left': '0pt', 'top': '0pt', 'z-index': 10000}">
         </div>
@@ -20,6 +20,10 @@ import axios from 'axios'
         props: {
             'format': {
                 type: String
+            },
+            'blur': {
+                type: Number,
+                default: 1.28
             },
             'saturate': {
                 type: Number,
