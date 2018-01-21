@@ -1,5 +1,5 @@
 <template>
-    <channel-chooser></channel-chooser>
+    <television-set skin_src="/static/skins/oldschool.json" flicker="false" crt="true" format="modern" src="start"></television-set>
 </template>
 <script>
     export default {
