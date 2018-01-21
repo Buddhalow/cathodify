@@ -1,6 +1,8 @@
 body {
     height: 100%;
     width:100%;
+    font-family: "Tahoma";
+    font-size: 11px;
 }
 iframe {
     z-index: 1000;
@@ -12,11 +14,14 @@ html {
     margin: 0;
     padding: 0;
 }
-footer a {
-    color: white;
-    text-decoration: none;
-}
+
 iframe {
     
 display: block !important;
+}
+#app {
+    margin: 0pt;
+}
+a {
+    color: black;
 }

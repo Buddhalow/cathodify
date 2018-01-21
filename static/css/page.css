@@ -1,0 +1,15 @@
+body {
+    background-color: black;
+    text-align: center;
+    
+}
+* {
+    font-size: 28pt;
+    font-family: "Courier New";
+    color: green;
+}
+input, select {
+    display: block;
+    background-color: transparent;
+    border: 1px solid green;
+}
