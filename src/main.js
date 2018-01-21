@@ -11,11 +11,12 @@ Vue.filter('formatUrl', function (input) {
   let embed_yt_template = "https://www.youtube.com/embed/";
   let url = input
   if (url.indexOf('https://www.tv4play.se/program') == 0) {
-    let id = url.split(/\//)[5];
+    var id = url.split(/\//)[5];
     url = 'https://www.tv4play.se/iframe/video/' + id
   }
   if (url.indexOf('https://youtu.be') == 0) {
-      let id = url.split(/\//)[2];
+    
+      var id = url.split(/\//)[3]
       url = embed_yt_template + id;
   } else if (url.indexOf('https://www.youtube.com/watch?v=') === 0) {
       let id = url.split('=')[1];
