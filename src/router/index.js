@@ -15,8 +15,8 @@ export default new VueRouter({
     },
     {
       path: '/',
-      name: 'Start',
-      component: Start
+      name: 'Channel',
+      component: Channel
     }
   ]
 })

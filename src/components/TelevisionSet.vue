@@ -1,8 +1,8 @@
 <template>
-    <div>
+    <div    >
         <div v-if="skin" :style="{position: 'relative'}">
             <img :src="skin.back.image_url" v-bind:style="{position: 'absolute', left: '0pt', top: '0pt'}">
-            <div v-bind:class="[crt ? 'crt' : '', flicker ? 'flicker' : '']" >
+            <div v-bind:class="[crt ? 'crt' : '', flicker ? 'crt-flickering' : '']" >
                 <iframe :width="skin.formats[format].width" :height="skin.formats[format].height" v-bind:style="{position: 'absolute', left: skin.formats[format].left, top: skin.formats[format].top, 'filter': 'saturate(' + saturate + '%) blur(' + blur + 'px)', opacity: skin.opacity}" :src="url + '?playsinline=1&autoplay=1'" frameborder="0" allow="encrypted-media"></iframe>
             </div>
             <img :src="skin.front.image_url" v-bind:style="{'pointer-events': 'none', 'position': 'absolute', 'left': '0pt', 'top': '0pt', 'z-index': 10000}">
@@ -67,7 +67,7 @@ import axios from 'axios'
              window.addEventListener('message', (e) => {
                 if (e.data && e.data.action == 'chooseChannel') {
                     this.$router.push({
-                        path: '/channel',
+                        path: '/',
                         query: e.data
                     })
                 }
