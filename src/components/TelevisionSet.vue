@@ -78,6 +78,7 @@ import axios from 'axios'
             loadSkin(url) {
                 axios.get(url).then((response) => {
                     this.skin = response.data
+                    this.saturate = this.skin.saturate * 100
                 })
             }
         }

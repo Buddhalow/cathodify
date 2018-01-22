@@ -1,7 +1,18 @@
+:root {
+    --foreground-color: #aaffaa;
+}
 body {
     background-color: black;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
     
+}
+html, body {
+    
+    height: 100%;
+    display: block;
 }
 * {
     font-size: 28pt;
@@ -9,7 +20,20 @@ body {
     color: green;
 }
 input, select {
-    display: block;
+    display: inline-block;
     background-color: transparent;
-    border: 1px solid green;
+    border: 1px solid var(--foreground-color);
+}
+.btn {
+    background: none;
+    border: 1pt solid var(--foreground-color);
+    color: var(--foreground-color);
+}
+.btn-primary {
+    color: black;
+    
+    background-color: var(--foreground-color);
+}
+.center {
+    
 }

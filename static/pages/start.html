@@ -8,32 +8,36 @@
         
     </script>
     <body>
-        <h1>Welcome</h1>
-        <form onsubmit="return onSubmit(event)">
-            <label for="url" class="label">Enter YouTube URL</label>
-            <input type="url" name="src" placeholder="https://www.youtube.com/watch?v=n7PWpQ-rISk"><br>
-            <select name="format" style="width: 300pt">
-                <option disabled value="">Select format</option>
-                <option value="modern">Modern</option>
-                <option value="oldschool">ld school format (Better for old videos ripped from television)</option>
-            </select>
-            <input type="checkbox" name="crt" value="true"> Enable CRT screen effect<br>
-            <input type="checkbox" name="flicker" value="true"> Enable CRT flickering<br>
-            <button class="btn btn-primary" type="submit">Watch</button>
-        </form>
-        <script>
-            function onSubmit (e) {
-                e.preventDefault();
-                var form = document.forms[0]
-                window.parent.postMessage({
-                    action: 'chooseChannel',
-                    src: form.src.value,
-                    format: form.format.options[form.format.selectedIndex].value,
-                    crt: form.crt.value == 'true',
-                    flicker:form.flicker.value == 'true'
-                }, '*')
-                return false
-            }
-        </script>
+        <div class="center">
+            
+            <h1>Welcome</h1>
+            <form onsubmit="return onSubmit(event)">
+                <label for="url" class="label">Enter YouTube URL</label><br>
+                <input type="url" name="src" placeholder="https://www.youtube.com/watch?v=n7PWpQ-rISk"><br>
+                <label for="url" class="label">Select screen type</label><br>
+                <select name="format" style="width: 300pt">
+                    <option disabled value="">Select format</option>
+                    <option value="modern">Modern</option>
+                    <option value="oldschool">ld school format (Better for old videos ripped from television)</option>
+                </select><br>
+                <input type="checkbox" name="crt" value="true"><br> Enable CRT screen effect<br>
+                <input type="checkbox" name="flicker" value="true"><br> Enable CRT flickering<br>
+                <button class="btn btn-primary" type="submit">Watch</button>
+            </form>
+            <script>
+                function onSubmit (e) {
+                    e.preventDefault();
+                    var form = document.forms[0]
+                    window.parent.postMessage({
+                        action: 'chooseChannel',
+                        src: form.src.value,
+                        format: form.format.options[form.format.selectedIndex].value,
+                        crt: form.crt.value == 'true',
+                        flicker:form.flicker.value == 'true'
+                    }, '*')
+                    return false
+                }
+            </script>
+        </div>
     </body>
 </html>

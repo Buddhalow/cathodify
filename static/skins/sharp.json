@@ -1,0 +1,24 @@
+{
+    "back": {
+        "image_url": "/static/images/sharp.jpg"
+    },
+    "front": {
+        "image_url": "/static/images/sharp_overlay.png"
+    },
+    "opacity": 0.8,
+    "saturate": 0.0,
+    "formats": {
+        "modern": {
+            "left": "205pt",
+            "top": "122pt",
+            "width": "555pt",
+            "height": "405pt"
+        },
+        "oldschool": {
+            "left": "125pt",
+            "top": "82pt",
+            "width": "755pt",
+            "height": "505pt"
+        }
+    }
+}
