@@ -1,15 +1,15 @@
 <template>
-    <television-set skin_src="/static/skins/oldschool.json" flicker="false" crt="true" format="modern" src="start"></television-set>
+    <div></div>
 </template>
 <script>
-    export default {
-        data() {
-            return {
-                
-            }
-        },
-        methods: {
+  export default {
+    data() {
+      return {
         
-        }
+      }
+    },
+    methods: {
+    
     }
+  }
 </script>

@@ -8,20 +8,20 @@ import ChannelChooser from './components/ChannelChooser'
 import axios from 'axios'
 
 Vue.filter('formatUrl', function (input) {
-  let embed_yt_template = "https://www.youtube.com/embed/";
+  let embedYtTemplate = 'https://www.youtube.com/embed/'
   let url = input
-  if (url.indexOf('https://www.tv4play.se/program') == 0) {
-    var id = url.split(/\//)[5];
+  let id
+  if (url.indexOf('https://www.tv4play.se/program') === 0) {
+    id = url.split(/\//)[5]
     url = 'https://www.tv4play.se/iframe/video/' + id
   }
-  if (url.indexOf('https://youtu.be') == 0) {
-    
-      var id = url.split(/\//)[3]
-      url = embed_yt_template + id;
+  if (url.indexOf('https://youtu.be') === 0) {
+    id = url.split(/\//)[3]
+    url = embedYtTemplate + id
   } else if (url.indexOf('https://www.youtube.com/watch?v=') === 0) {
-      let id = url.split('=')[1];
-      id = id.split('&')[0];
-      url = embed_yt_template + id;
+    id = url.split('=')[1]
+    id = id.split('&')[0]
+    url = embedYtTemplate + id
   }
   return url
 })

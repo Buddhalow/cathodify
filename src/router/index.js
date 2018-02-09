@@ -5,18 +5,15 @@ import Channel from '@/views/Channel'
 
 Vue.use(VueRouter)
 
-export default new VueRouter({
-  mode: 'history',
-  routes: [
-    {
-      path: '/channel',
-      name: 'Channel',
-      component: Channel
-    },
-    {
-      path: '/',
-      name: 'Channel',
-      component: Channel
-    }
-  ]
-})
+export default new VueRouter(
+  {
+    mode: 'history',
+    routes: [
+      {
+        path: '/',
+        name: 'Channel',
+        component: Channel
+      }
+    ]
+  }
+)
