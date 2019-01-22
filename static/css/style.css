@@ -25,3 +25,7 @@ display: block !important;
 a {
     color: black;
 }
+
+.xterm-viewport {
+    color: green !important;
+}

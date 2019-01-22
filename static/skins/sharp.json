@@ -1,4 +1,10 @@
 {
+    "source": {
+        "from": "pixabay",
+        "by": "",
+        "url": "",
+        "license": "CC 0"
+    },
     "back": {
         "image_url": "/static/images/sharp.jpg"
     },

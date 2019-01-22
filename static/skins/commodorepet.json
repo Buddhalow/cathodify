@@ -1,0 +1,32 @@
+{
+    "source": {
+        "from": "wikipedia",
+        "by": "Thomas Conté",
+        "url": "https://en.wikipedia.org/wiki/Commodore_PET#/media/File:Commodore_SuperPET_SP9000_(Thomas_Cont%C3%A9).jpg",
+        "license": "CC BY-SA 2.0"
+    },
+    "back": {
+        "image_url": "/static/images/CommodorePET2.png"
+    },
+    "front": {
+        "image_url": "/static/images/CommodorePET_Overlay2.png"
+    },
+    "blur": 2,
+    "sepia": 0,
+    "opacity": 0.8,
+    "saturate": 0.0,
+    "formats": {
+        "modern": {
+            "left": "365pt",
+            "top": "160pt",
+            "width": "588pt",
+            "height": "400pt"
+        },
+        "oldschool": {
+            "left": "120pt",
+            "top": "195pt",
+            "width": "1400",
+            "height": "755"
+        }
+    }
+}

@@ -6,7 +6,7 @@
         "license": "CC 0"
     },
     "back": {
-        "image_url": "/static/images/tv.jpg"
+        "image_url": "/static/images/Monitor.jpg"
     },
     "front": {
         "image_url": "/static/images/tv_overlay.png"

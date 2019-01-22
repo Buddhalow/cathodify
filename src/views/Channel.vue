@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <television-set v-if="src" :skin_src="skin_src" :flicker="flicker" crt="crt" :format="format" :src="src | formatUrl"></television-set>
+  <div style="display: flex; justify-content: center; align-items: center">
+    <div style="display: block">
+      <television-set v-if="src" :skin_src="skin_src" :flicker="flicker" crt="crt" :format="format" :src="src | formatUrl"></television-set>
+    </div>
   </div>
 </template>
 <script>
@@ -32,10 +34,12 @@
     watch: {
       '$route'(to, from) {
         this.$nextTick(() => {
+          debugger
         })
       }
     },
     mounted() {
+      
       this.$nextTick(() => {
         
       })
