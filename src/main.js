@@ -5,7 +5,6 @@ import App from './App'
 import router from './router'
 import TelevisionSet from './components/TelevisionSet'
 import ChannelChooser from './components/ChannelChooser'
-import axios from 'axios'
 
 Vue.filter('formatUrl', function (input) {
   let embedYtTemplate = 'https://www.youtube.com/embed/'

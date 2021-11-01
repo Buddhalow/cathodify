@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Start from '@/views/Start'
 import Channel from '@/views/Channel'
 
 Vue.use(VueRouter)
